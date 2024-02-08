@@ -13,12 +13,13 @@ def parse_url():
     elements = soup.find_all(class_="spin-item")
     songs = []
     for element in elements:
-        print(element.find(class_="artist").get_text())
-        print(element.find(class_="song").get_text())
+        artist = element.find(class_="artist").get_text()
+        
+        song = element.find(class_="song").get_text()
+        print(artist)
+        print(song)
         songs.append(
-            element.find(class_="artist").get_text()
-            + " "
-            + element.find(class_="song").get_text()
+artist+" " + song
         )
 
     return songs
